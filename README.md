@@ -1,1 +1,267 @@
-# Portfolio
+# <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Dương Kiều Trâm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark Gray */
+            color: #F9FAFB; /* Lighter Gray/Almost White */
+            scroll-behavior: smooth;
+        }
+        .glow {
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #E5E7EB; /* Gray 200 */
+            border: 2px solid #111827;
+        }
+        .project-showcase:hover img {
+            transform: scale(1.05);
+        }
+        .spinner {
+            border-top-color: #111827;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+         /* Modal styles */
+        .modal-backdrop {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header & Hero Section -->
+    <header class="container mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                <div class="w-32 h-32 rounded-full mx-auto md:mx-0 mb-6 overflow-hidden border-4 border-gray-200 glow">
+                    <img src="https://placehold.co/200x200/1f2937/f3f4f6?text=Trâm" alt="Ảnh đại diện Dương Kiều Trâm" class="w-full h-full object-cover">
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">Dương Kiều Trâm</h1>
+                <p class="text-xl md:text-2xl text-gray-200 mt-2">Digital Marketing Specialist</p>
+                <p class="mt-4 text-gray-300 max-w-lg mx-auto md:mx-0">
+                    Với 1 năm kinh nghiệm trong lĩnh vực Marketing, chuyên sâu về Content, tôi mong muốn được học hỏi và phát triển bản thân từ Data đến Creative.
+                </p>
+                <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                    <a href="mailto:dktram0312@gmail.com" class="bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">Liên Hệ Qua Email</a>
+                    <a href="#projects" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Xem Dự Án</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                 <div class="grid grid-cols-2 gap-4 w-full max-w-md">
+                    <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">56%</h3><p class="text-gray-400">Tăng trưởng Traffic</p></div>
+                    <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">50%+</h3><p class="text-gray-400">Bài viết Top Google</p></div>
+                    <div class="glass-effect p-4 rounded-lg text-center col-span-2"><h3 class="text-3xl font-bold text-white">1K+</h3><p class="text-gray-400">Lượt xem từ Google Discovery</p></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-6">
+        <!-- Skills Section -->
+        <section id="skills" class="py-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Kỹ Năng Chuyên Môn</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="skill-card bg-gray-800 p-6 rounded-lg text-center transition duration-300"><i data-lucide="bar-chart-3" class="w-12 h-12 mx-auto text-gray-300 mb-4"></i><h3 class="text-lg font-semibold text-white">Phân Tích Dữ Liệu</h3></div>
+                <div class="skill-card bg-gray-800 p-6 rounded-lg text-center transition duration-300"><i data-lucide="presentation" class="w-12 h-12 mx-auto text-gray-300 mb-4"></i><h3 class="text-lg font-semibold text-white">Google Analytics</h3></div>
+                <div class="skill-card bg-gray-800 p-6 rounded-lg text-center transition duration-300"><i data-lucide="search-check" class="w-12 h-12 mx-auto text-gray-300 mb-4"></i><h3 class="text-lg font-semibold text-white">Ahrefs & SEO</h3></div>
+                <div class="skill-card bg-gray-800 p-6 rounded-lg text-center transition duration-300">
+                     <svg class="w-12 h-12 mx-auto text-gray-300 mb-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>WordPress</title><path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zM2.13 11.22c-.09.345-.12.705-.12 1.08 0 1.02.225 1.995.63 2.88l2.22-1.23a4.43 4.43 0 0 1-.36-1.62L2.13 11.22zm9.24 4.5c.48 2.205 2.115 3.84 4.32 4.32l.36-1.53c-1.425-.33-2.58-1.485-2.91-2.91l-1.77.12zm-5.61-3.3c0 .39-.045.765-.12 1.125l2.43.195c.12-.45.18-.915.18-1.41 0-2.31-1.02-4.41-2.655-5.88l-1.59 1.83c1.02.885 1.65 2.19 1.65 3.63zm.825-5.415c.42-.225.87-.405 1.35-.54l.705 2.19c-.315.105-.615.24-.9.39L6.585 6.915zM15.765 9.352c-.135.225-.285.435-.45.645l-2.28 2.85-1.29-3.495c.735-.33 1.395-.81 1.92-1.41l2.1 1.41zM8.01 4.14c-2.775 1.29-4.5 4.14-4.5 7.41 0 .225.015.435.03.66l2.325-.15c-.015-.165-.03-.33-.03-.51 0-2.31 1.26-4.32 3.12-5.43L8.01 4.14z"/></svg>
+                    <h3 class="text-lg font-semibold text-white">Wordpress & Vnsites</h3>
+                </div>
+                <div class="skill-card bg-gray-800 p-6 rounded-lg text-center transition duration-300"><i data-lucide="image" class="w-12 h-12 mx-auto text-gray-300 mb-4"></i><h3 class="text-lg font-semibold text-white">Thiết Kế Ảnh</h3><p class="text-sm text-gray-400">AI, PS, Canva</p></div>
+                <div class="skill-card bg-gray-800 p-6 rounded-lg text-center transition duration-300"><i data-lucide="video" class="w-12 h-12 mx-auto text-gray-300 mb-4"></i><h3 class="text-lg font-semibold text-white">Edit Video</h3></div>
+                <div class="skill-card bg-gray-800 p-6 rounded-lg text-center transition duration-300"><i data-lucide="bot" class="w-12 h-12 mx-auto text-gray-300 mb-4"></i><h3 class="text-lg font-semibold text-white">Workflow Automation</h3></div>
+                <div class="skill-card bg-gray-800 p-6 rounded-lg text-center transition duration-300"><i data-lucide="message-circle" class="w-12 h-12 mx-auto text-gray-300 mb-4"></i><h3 class="text-lg font-semibold text-white">Giao Tiếp & Xử Lý Tình Huống</h3></div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects" class="py-16">
+            <h2 class="text-3xl font-bold text-center mb-16 text-white">Dự Án Tiêu Biểu</h2>
+            <div class="space-y-20">
+                <!-- Project 1: SEO Content -->
+                <div class="project-showcase grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="rounded-lg overflow-hidden"><img src="https://placehold.co/600x450/1f2937/f9fafb?text=Bài+Viết+SEO" alt="Dự án Content SEO cho Jobsnew.vn" class="w-full h-full object-cover transition duration-300"></div>
+                    <div><p class="text-sm text-gray-400 font-semibold">Content SEO</p><h3 class="text-2xl font-bold text-white mt-2">Bài Viết Chuẩn SEO - Jobsnew.vn</h3><p class="text-gray-300 mt-4">Nghiên cứu từ khóa và phát triển nội dung chuyên sâu cho các chủ đề "An toàn lao động", "Ngành truyền thông",... Các bài viết được tối ưu hóa theo phương pháp Semantic SEO, giúp nhiều từ khóa đạt thứ hạng cao trên Google và góp phần tăng trưởng traffic đáng kể cho website.</p><a href="#" class="inline-block mt-6 text-gray-300 font-semibold hover:text-white">Xem chi tiết →</a></div>
+                </div>
+                <!-- Project 2: Social & E-commerce -->
+                <div class="project-showcase grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="md:order-2 rounded-lg overflow-hidden"><img src="https://placehold.co/600x450/1f2937/f9fafb?text=Social+&+E-commerce" alt="Dự án Social và TMĐT cho Marie" class="w-full h-full object-cover transition duration-300"></div>
+                    <div class="md:order-1"><p class="text-sm text-gray-400 font-semibold">Social & E-commerce</p><h3 class="text-2xl font-bold text-white mt-2">Chiến Dịch Marketing - Marie</h3><p class="text-gray-300 mt-4">Phụ trách toàn diện các hoạt động marketing cho thương hiệu khăn giấy Marie. Bao gồm lên kịch bản video TikTok, thiết kế bài đăng Facebook, và quản lý, tối ưu hóa gian hàng trên sàn thương mại điện tử Shopee để tăng doanh số và nhận diện thương hiệu.</p><a href="#" class="inline-block mt-6 text-gray-300 font-semibold hover:text-white">Xem chi tiết →</a></div>
+                </div>
+                <!-- Project 3: Design -->
+                <div class="project-showcase grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="rounded-lg overflow-hidden"><img src="https://placehold.co/600x450/1f2937/f9fafb?text=Thiết+Kế+Branding" alt="Dự án thiết kế nhận diện thương hiệu" class="w-full h-full object-cover transition duration-300"></div>
+                    <div><p class="text-sm text-gray-400 font-semibold">Thiết Kế Branding</p><h3 class="text-2xl font-bold text-white mt-2">Nhận Diện Thương Hiệu - Yum Station</h3><p class="text-gray-300 mt-4">Thực hiện dự án thiết kế bộ nhận diện thương hiệu cho nhà hàng "Yum Station". Sản phẩm bao gồm logo, menu, và name card, tất cả đều được thiết kế đồng bộ để tạo ra một hình ảnh chuyên nghiệp và hấp dẫn cho thương hiệu ẩm thực Thái.</p><a href="#" class="inline-block mt-6 text-gray-300 font-semibold hover:text-white">Xem chi tiết →</a></div>
+                </div>
+                <!-- Project 4: Google Discovery Feature -->
+                <div class="project-showcase grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="md:order-2 rounded-lg overflow-hidden"><img src="https://placehold.co/600x450/1f2937/f9fafb?text=Google+Discovery" alt="Dự án bài viết trên Google Discovery" class="w-full h-full object-cover transition duration-300"></div>
+                    <div class="md:order-1"><p class="text-sm text-gray-400 font-semibold">Content Marketing</p><h3 class="text-2xl font-bold text-white mt-2">Bài Viết Đề Xuất Google Discovery</h3><p class="text-gray-300 mt-4">Sáng tạo nội dung cho website congthongtintuyensinh.edu.vn. Một bài viết về ngành Ngôn ngữ Anh đã thành công được đề xuất trên Google Discovery, thu hút hơn 1.000 lượt xem, chứng tỏ khả năng tạo ra nội dung hấp dẫn và có giá trị cho người đọc trong lĩnh vực giáo dục.</p><a href="#" class="inline-block mt-6 text-gray-300 font-semibold hover:text-white">Xem chi tiết →</a></div>
+                </div>
+            </div>
+        </section>
+        <!-- Experience Section -->
+        <section id="experience" class="py-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Kinh Nghiệm Làm Việc</h2>
+            <div class="relative max-w-2xl mx-auto border-l-2 border-gray-700 pl-8">
+                <div class="timeline-item mb-12"><p class="text-gray-400 font-semibold">12/2023 - Hiện tại</p><h3 class="text-xl font-bold text-white mt-1">Content SEO Specialist</h3><p class="text-gray-400 font-medium">Jobsnew.vn</p><ul class="mt-4 list-disc list-inside text-gray-300 space-y-2"><li>Nghiên cứu từ khóa, lập kế hoạch và xây dựng nội dung chuẩn SEO theo phương pháp Semantic SEO.</li><li>Đã xuất bản 116/207 bài viết, với hơn 50% nằm trong Top Google.</li><li>Góp phần tăng traffic website hơn 56% (từ 12,3k lên 19,2k) trong 3 tháng.</li><li>Phối hợp với team SEO để triển khai chiến lược nội dung hiệu quả.</li></ul></div>
+                 <div class="timeline-item mb-12"><p class="text-gray-400 font-semibold">2023 - Hiện tại</p><h3 class="text-xl font-bold text-white mt-1">Cộng Tác Viên Content</h3><p class="text-gray-400 font-medium">Freelance</p><ul class="mt-4 list-disc list-inside text-gray-300 space-y-2"><li>Sáng tạo nội dung cho các nền tảng tuyển dụng và doanh nghiệp.</li><li>Đối tác tiêu biểu: VietnamWorks (HrInsider), X-epoxy.</li></ul></div>
+                <div class="timeline-item mb-12"><p class="text-gray-400 font-semibold">10/2023 - 12/2023</p><h3 class="text-xl font-bold text-white mt-1">Marketing Executive</h3><p class="text-gray-400 font-medium">Công ty TNHH Nguyễn Khang | Khăn giấy Marie</p><ul class="mt-4 list-disc list-inside text-gray-300 space-y-2"><li>Xây dựng và quản lý nội dung trên TikTok, Facebook.</li><li>Tối ưu hóa nội dung chuẩn SEO cho website.</li><li>Quản lý và vận hành các sàn TMĐT (Shopee, TikTok Shop).</li><li>Thiết kế ảnh sản phẩm cho các chiến dịch content.</li></ul></div>
+                <div class="timeline-item"><p class="text-gray-400 font-semibold">09/2023 - 10/2023</p><h3 class="text-xl font-bold text-white mt-1">Sale Admin</h3><p class="text-gray-400 font-medium">Công ty Đồng phục và Quà tặng Ngôi Sao Xanh</p><ul class="mt-4 list-disc list-inside text-gray-300 space-y-2"><li>Lên kế hoạch, định hướng mục tiêu khách hàng.</li><li>Tư vấn, chăm sóc khách hàng và chốt đơn.</li></ul></div>
+            </div>
+        </section>
+        <!-- Gemini AI Tool Section -->
+        <section id="gemini-tool" class="py-16 bg-gray-900 rounded-lg">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white">Công Cụ Sáng Tạo Nội Dung AI ✨</h2>
+                <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Nhập một chủ đề bất kỳ. Gemini sẽ giúp bạn đề xuất các ý tưởng nội dung độc đáo cho blog và mạng xã hội.</p>
+                <p class="mt-2 text-gray-400 max-w-2xl mx-auto text-sm">Đây là một ví dụ về cách tôi áp dụng công nghệ AI vào công việc sáng tạo nội dung.</p>
+            </div>
+            <div class="mt-8 max-w-xl mx-auto flex flex-col sm:flex-row items-center gap-4 px-4">
+                <input id="topic-input" type="text" placeholder="Ví dụ: Xu hướng marketing 2025" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gray-300">
+                <button id="generate-ideas-btn" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                    <span id="btn-text">Tạo Ý Tưởng</span>
+                    <div id="btn-spinner" class="spinner w-5 h-5 ml-2 border-2 border-solid rounded-full hidden"></div>
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <h3 class="text-2xl font-bold text-white">Cần một chuyên viên Digital Marketing?</h3>
+            <p class="text-gray-400 mt-2">Tôi luôn sẵn sàng cho những cơ hội mới. Hãy liên lạc với tôi!</p>
+            <div class="mt-6">
+                <a href="mailto:dktram0312@gmail.com" class="text-gray-300 hover:text-white text-lg font-semibold">dktram0312@gmail.com</a>
+                <p class="text-gray-400 mt-2">SĐT: 083.557.5440</p>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-6">
+                 <p class="text-gray-500 text-sm">© 2024 Dương Kiều Trâm. Thiết kế bởi Gemini.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal for displaying results -->
+    <div id="results-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div id="modal-backdrop" class="modal-backdrop fixed inset-0 bg-black/70 opacity-0"></div>
+        <div id="modal-content" class="modal-content bg-gray-800 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 relative transform scale-95">
+            <h3 id="modal-title" class="text-2xl font-bold text-white mb-4">✨ Ý tưởng nội dung cho chủ đề:</h3>
+            <div id="modal-body" class="text-gray-300 prose prose-invert max-w-none"></div>
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </div>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        // Gemini API Logic
+        const generateBtn = document.getElementById('generate-ideas-btn');
+        const topicInput = document.getElementById('topic-input');
+        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
+        // Modal elements
+        const resultsModal = document.getElementById('results-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const showModal = () => {
+            resultsModal.classList.remove('hidden');
+            setTimeout(() => {
+                modalBackdrop.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+        };
+        const hideModal = () => {
+            modalBackdrop.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                resultsModal.classList.add('hidden');
+            }, 300);
+        };
+        closeModalBtn.addEventListener('click', hideModal);
+        modalBackdrop.addEventListener('click', hideModal);
+        generateBtn.addEventListener('click', async () => {
+            const topic = topicInput.value.trim();
+            if (!topic) {
+                alert('Vui lòng nhập một chủ đề.');
+                return;
+            }
+            // Show loading state
+            btnText.classList.add('hidden');
+            btnSpinner.classList.remove('hidden');
+            generateBtn.disabled = true;
+            try {
+                const prompt = `Hãy đóng vai một chuyên gia marketing, dựa vào chủ đề "${topic}", hãy đề xuất 5 ý tưởng tiêu đề bài viết blog hấp dẫn và 5 ý tưởng cho bài đăng mạng xã hội (Facebook, TikTok) để thu hút tương tác. Trình bày kết quả dưới dạng markdown.`;
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // API key will be provided by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;           
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+                const result = await response.json();        
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    // Display results in modal
+                    modalTitle.textContent = `✨ Ý tưởng nội dung cho chủ đề: "${topic}"`;
+                    modalBody.innerHTML = text.replace(/\n/g, '<br>'); // Basic formatting
+                    showModal();
+                } else {
+                   modalTitle.textContent = 'Lỗi';
+                   modalBody.textContent = 'Không thể tạo ý tưởng. Vui lòng thử lại.';
+                   showModal();
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                modalTitle.textContent = 'Đã xảy ra lỗi';
+                modalBody.textContent = 'Không thể kết nối đến máy chủ AI. Vui lòng kiểm tra lại và thử lại sau.';
+                showModal();
+            } finally {
+                // Hide loading state
+                btnText.classList.remove('hidden');
+                btnSpinner.classList.add('hidden');
+                generateBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
+
