@@ -62,45 +62,125 @@
             filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
             -webkit-filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
         }
+        /* Vertical Navbar - Updated */
+        .vertical-nav {
+            position: fixed;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            z-index: 40;
+            background-color: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            border-radius: 9999px;
+            padding: 0.75rem 0.5rem;
+        }
+        .nav-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem; /* 40px */
+            height: 2.5rem; /* 40px */
+            border-radius: 9999px;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .nav-link.active {
+            background-color: #F9FAFB;
+            color: #111827;
+        }
+        .nav-link:not(.active) {
+             color: #D1D5DB;
+        }
+        .nav-link:not(.active):hover {
+            background-color: rgba(55, 65, 81, 0.7);
+        }
+        .nav-tooltip {
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%) translateX(10px);
+            background-color: #1F2937;
+            color: #F9FAFB;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .nav-link:hover .nav-tooltip {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
     </style>
 </head>
 <body class="antialiased">
 
+    <!-- Vertical Navbar -->
+    <nav class="vertical-nav hidden md:block">
+        <ul class="space-y-2">
+            <li>
+                <a href="#home" class="nav-link group" data-nav-link="home">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                    <span class="nav-tooltip">Giới thiệu</span>
+                </a>
+            </li>
+            <li>
+                <a href="#skills" class="nav-link group" data-nav-link="skills">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    <span class="nav-tooltip">Kỹ năng</span>
+                </a>
+            </li>
+            <li>
+                <a href="#projects" class="nav-link group" data-nav-link="projects">
+                    <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+                    <span class="nav-tooltip">Dự án</span>
+                </a>
+            </li>
+            <li>
+                <a href="#experience" class="nav-link group" data-nav-link="experience">
+                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    <span class="nav-tooltip">Kinh nghiệm</span>
+                </a>
+            </li>
+            <li>
+                <a href="#gemini-tool" class="nav-link group" data-nav-link="gemini-tool">
+                    <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+                    <span class="nav-tooltip">Công cụ AI</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
     <!-- Header & Hero Section -->
-    <header class="container mx-auto px-6 py-16">
-        <div class="flex flex-col md:flex-row md:items-center justify-center md:gap-24">
+    <header id="home" class="container mx-auto px-6 py-16">
+        <div class="flex flex-col items-center text-center">
             
-            <div class="mb-10 md:mb-0 text-left">
-                <div class="w-56 h-56 mx-auto md:mx-0 mb-6">
-                    <img src="avt.png" alt="Ảnh đại diện Dương Kiều Trâm" class="w-full h-full object-contain avatar-glow">
-                </div>
-                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">Dương Kiều Trâm</h1>
-                <p class="text-xl md:text-2xl text-gray-200 mt-2">Digital Marketing Specialist</p>
-                <p class="mt-4 text-gray-300 max-w-lg">
-                    Với 1 năm kinh nghiệm trong lĩnh vực Marketing, chuyên sâu về Content, tôi mong muốn được học hỏi và phát triển bản thân từ Data đến Creative.
-                </p>
-                
-                <div class="mt-8 flex justify-start space-x-4">
-                    <a href="mailto:dktram0312@gmail.com" class="bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">Liên Hệ Qua Email</a>
-                    <a href="#projects" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Xem Dự Án</a>
+            <div class="mb-6">
+                <div class="w-56 h-56 mx-auto">
+                    <img src="https://dwng0312.github.io/Portfolio/avt.png" alt="Ảnh đại diện Dương Kiều Trâm" class="w-full h-full object-contain avatar-glow">
                 </div>
             </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">Dương Kiều Trâm</h1>
+            <p class="text-xl md:text-2xl text-gray-200 mt-2">Digital Marketing Specialist</p>
+            
+            <p class="mt-6 text-gray-300 max-w-2xl">
+                Với 1 năm kinh nghiệm trong lĩnh vực Marketing, chuyên sâu về Content, tôi mong muốn được học hỏi và phát triển bản thân từ Data đến Creative.
+            </p>
 
-            <div class="flex flex-col gap-8 justify-center md:flex-shrink-0">
-                <div class="grid grid-cols-2 gap-4 w-full max-w-md">
-                    <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">56%</h3><p class="text-gray-400">Tăng trưởng Traffic</p></div>
-                    <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">50%+</h3><p class="text-gray-400">Bài viết Top Google</p></div>
-                    <div class="glass-effect p-4 rounded-lg text-center col-span-2"><h3 class="text-3xl font-bold text-white">1K+</h3><p class="text-gray-400">Lượt xem từ Google Discovery</p></div>
-                </div>
-                <!-- Featured Partners Section -->
-                <div>
-                    <h3 class="text-lg font-semibold text-center text-gray-300 mb-4">Đối Tác Tiêu Biểu</h3>
-                    <div class="flex justify-center items-center gap-6">
-                        <div class="text-gray-400 font-bold text-lg">Jobsnew</div>
-                        <div class="text-gray-400 font-bold text-lg">VietnamWorks</div>
-                        <div class="text-gray-400 font-bold text-lg">X-epoxy</div>
-                    </div>
-                </div>
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl">
+                <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">56%</h3><p class="text-gray-400">Tăng trưởng Traffic</p></div>
+                <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">50%+</h3><p class="text-gray-400">Bài viết Top Google</p></div>
+                <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">1K+</h3><p class="text-gray-400">Lượt xem từ Google Discovery</p></div>
+            </div>
+            
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="mailto:dktram0312@gmail.com" class="bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">Liên Hệ Qua Email</a>
+                <a href="#projects" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Xem Dự Án</a>
             </div>
 
         </div>
@@ -265,6 +345,32 @@
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
+
+        // --- Scroll-spy for Vertical Nav ---
+        const sections = document.querySelectorAll('section[id], header[id]');
+        const navLinks = document.querySelectorAll('.vertical-nav a');
+
+        const activateNavLink = (id) => {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    activateNavLink(entry.target.id);
+                }
+            });
+        }, { rootMargin: '-30% 0px -70% 0px' }); // Activate when section is in the middle 40% of the viewport
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
 
         // --- Project Modal Logic ---
         const projectCards = document.querySelectorAll('.project-card');
