@@ -50,7 +50,7 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-         /* Modal styles */
+        /* Modal styles */
         .modal-backdrop {
             transition: opacity 0.3s ease;
         }
@@ -115,6 +115,11 @@
             opacity: 1;
             transform: translateY(-50%) translateX(0);
         }
+        /* Style for active thumbnail in gallery */
+        .thumbnail-active {
+            border: 2px solid #F9FAFB;
+            opacity: 1 !important;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -122,67 +127,36 @@
     <!-- Vertical Navbar -->
     <nav class="vertical-nav hidden md:block">
         <ul class="space-y-2">
-            <li>
-                <a href="#home" class="nav-link group" data-nav-link="home">
-                    <i data-lucide="home" class="w-5 h-5"></i>
-                    <span class="nav-tooltip">Giới thiệu</span>
-                </a>
-            </li>
-            <li>
-                <a href="#skills" class="nav-link group" data-nav-link="skills">
-                    <i data-lucide="sparkles" class="w-5 h-5"></i>
-                    <span class="nav-tooltip">Kỹ năng</span>
-                </a>
-            </li>
-            <li>
-                <a href="#projects" class="nav-link group" data-nav-link="projects">
-                    <i data-lucide="folder-kanban" class="w-5 h-5"></i>
-                    <span class="nav-tooltip">Dự án</span>
-                </a>
-            </li>
-            <li>
-                <a href="#experience" class="nav-link group" data-nav-link="experience">
-                    <i data-lucide="briefcase" class="w-5 h-5"></i>
-                    <span class="nav-tooltip">Kinh nghiệm</span>
-                </a>
-            </li>
-            <li>
-                <a href="#gemini-tool" class="nav-link group" data-nav-link="gemini-tool">
-                    <i data-lucide="brain-circuit" class="w-5 h-5"></i>
-                    <span class="nav-tooltip">Công cụ AI</span>
-                </a>
-            </li>
+            <li><a href="#home" class="nav-link group" data-nav-link="home"><i data-lucide="home" class="w-5 h-5"></i><span class="nav-tooltip">Giới thiệu</span></a></li>
+            <li><a href="#skills" class="nav-link group" data-nav-link="skills"><i data-lucide="sparkles" class="w-5 h-5"></i><span class="nav-tooltip">Kỹ năng</span></a></li>
+            <li><a href="#projects" class="nav-link group" data-nav-link="projects"><i data-lucide="folder-kanban" class="w-5 h-5"></i><span class="nav-tooltip">Dự án</span></a></li>
+            <li><a href="#experience" class="nav-link group" data-nav-link="experience"><i data-lucide="briefcase" class="w-5 h-5"></i><span class="nav-tooltip">Kinh nghiệm</span></a></li>
+            <li><a href="#gemini-tool" class="nav-link group" data-nav-link="gemini-tool"><i data-lucide="brain-circuit" class="w-5 h-5"></i><span class="nav-tooltip">Công cụ AI</span></a></li>
         </ul>
     </nav>
 
     <!-- Header & Hero Section -->
     <header id="home" class="container mx-auto px-6 py-16">
         <div class="flex flex-col items-center text-center">
-            
             <div class="mb-6">
                 <div class="w-56 h-56 mx-auto">
                     <img src="https://dwng0312.github.io/Portfolio/avt.png" alt="Ảnh đại diện Dương Kiều Trâm" class="w-full h-full object-contain avatar-glow">
                 </div>
             </div>
-            
             <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">Dương Kiều Trâm</h1>
             <p class="text-xl md:text-2xl text-gray-200 mt-2">Digital Marketing Specialist</p>
-            
             <p class="mt-6 text-gray-300 max-w-2xl">
                 Với 1 năm kinh nghiệm trong lĩnh vực Marketing, chuyên sâu về Content, tôi mong muốn được học hỏi và phát triển bản thân từ Data đến Creative.
             </p>
-
             <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl">
                 <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">56%</h3><p class="text-gray-400">Tăng trưởng Traffic</p></div>
                 <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">50%+</h3><p class="text-gray-400">Bài viết Top Google</p></div>
                 <div class="glass-effect p-4 rounded-lg text-center"><h3 class="text-3xl font-bold text-white">1K+</h3><p class="text-gray-400">Lượt xem từ Google Discovery</p></div>
             </div>
-            
             <div class="mt-8 flex justify-center space-x-4">
                 <a href="mailto:dktram0312@gmail.com" class="bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">Liên Hệ Qua Email</a>
                 <a href="#projects" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Xem Dự Án</a>
             </div>
-
         </div>
     </header>
 
@@ -207,14 +181,15 @@
         <section id="projects" class="py-16">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">Dự Án Tiêu Biểu</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project Card 1 -->
+                <!-- Project Card 1: Updated with data-images and data-links -->
                 <div class="project-card bg-gray-800 rounded-lg overflow-hidden transition duration-300"
                      data-title="Bài Viết Chuẩn SEO"
                      data-category="Content SEO"
-                     data-image="SEO_Content"
+                     data-images="https://placehold.co/800x600/1f2937/f9fafb?text=Bài+Viết+Jobsnew,https://placehold.co/800x600/374151/f9fafb?text=Bài+Viết+HrInsider,https://placehold.co/800x600/4b5563/f9fafb?text=Bài+Viết+Tuyensinh"
+                     data-links="https://jobsnew.vn/blog,https://www.vietnamworks.com/hrinsider/,https://congthongtintuyensinh.edu.vn/"
                      data-description="Sáng tạo và tối ưu hóa nội dung chuẩn SEO cho các đối tác lớn như Jobsnew, HrInsider (VietnamWorks), và congthongtintuyensinh. Áp dụng phương pháp Semantic SEO, nghiên cứu từ khóa sâu, và tối ưu on-page để cải thiện thứ hạng và thu hút traffic tự nhiên.">
                     <div class="h-48 overflow-hidden">
-                        <img src="SEO_Content" alt="Dự án Content SEO" class="w-full h-full object-cover">
+                        <img src="https://placehold.co/800x600/1f2937/f9fafb?text=Bài+Viết+Jobsnew" alt="Dự án Content SEO" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <p class="text-sm text-gray-400">Content SEO</p>
@@ -226,7 +201,7 @@
                 <div class="project-card bg-gray-800 rounded-lg overflow-hidden transition duration-300"
                      data-title="Chiến Dịch Marketing - Marie"
                      data-category="Social & E-commerce"
-                     data-image="https://placehold.co/800x600/1f2937/f9fafb?text=Social+Marketing"
+                     data-images="https://placehold.co/800x600/1f2937/f9fafb?text=Social+Marketing,https://placehold.co/800x600/374151/f9fafb?text=Shopee+Store"
                      data-description="Phụ trách toàn diện các hoạt động marketing cho thương hiệu khăn giấy Marie. Công việc bao gồm lên ý tưởng và kịch bản cho video TikTok, thiết kế hình ảnh và viết nội dung quảng cáo cho Facebook, cũng như quản lý và tối ưu hóa gian hàng trên sàn thương mại điện tử Shopee để tăng doanh số và nhận diện thương hiệu.">
                     <div class="h-48 overflow-hidden">
                        <img src="https://placehold.co/600x400/1f2937/f9fafb?text=Social+&+E-commerce" alt="Dự án Social và TMĐT" class="w-full h-full object-cover">
@@ -241,7 +216,7 @@
                 <div class="project-card bg-gray-800 rounded-lg overflow-hidden transition duration-300"
                      data-title="Nhận Diện Thương Hiệu - Yum Station"
                      data-category="Thiết Kế Branding"
-                     data-image="https://placehold.co/800x600/1f2937/f9fafb?text=Branding"
+                     data-images="https://placehold.co/800x600/1f2937/f9fafb?text=Logo,https://placehold.co/800x600/374151/f9fafb?text=Menu,https://placehold.co/800x600/4b5563/f9fafb?text=Name+Card"
                      data-description="Thực hiện dự án thiết kế bộ nhận diện thương hiệu cho nhà hàng ẩm thực Thái 'Yum Station'. Sản phẩm bao gồm logo, menu, và name card, tất cả đều được thiết kế đồng bộ để tạo ra một hình ảnh chuyên nghiệp, hấp dẫn và nhất quán trên mọi ấn phẩm.">
                     <div class="h-48 overflow-hidden">
                         <img src="https://placehold.co/600x400/1f2937/f9fafb?text=Thiết+Kế+Branding" alt="Dự án Thiết kế Branding" class="w-full h-full object-cover">
@@ -256,7 +231,7 @@
                 <div class="project-card bg-gray-800 rounded-lg overflow-hidden transition duration-300"
                      data-title="Bài Viết Đề Xuất Google Discovery"
                      data-category="Content Marketing"
-                     data-image="https://placehold.co/800x600/1f2937/f9fafb?text=Google+Discovery"
+                     data-images="https://placehold.co/800x600/1f2937/f9fafb?text=Google+Discovery"
                      data-description="Sáng tạo nội dung chuyên sâu về chủ đề giáo dục, cụ thể là ngành Ngôn ngữ Anh cho website congthongtintuyensinh.edu.vn. Bài viết đã thành công được đề xuất trên Google Discovery, thu hút hơn 1.000 lượt xem, chứng tỏ khả năng tạo ra nội dung hấp dẫn, có giá trị và phù hợp với thuật toán của Google.">
                     <div class="h-48 overflow-hidden">
                         <img src="https://placehold.co/600x400/1f2937/f9fafb?text=Google+Discovery" alt="Dự án Google Discovery" class="w-full h-full object-cover">
@@ -265,6 +240,27 @@
                         <p class="text-sm text-gray-400">Content Marketing</p>
                         <h3 class="text-xl font-bold text-white mt-1">Bài Viết Đề Xuất Google Discovery</h3>
                         <p class="text-gray-300 mt-2 text-sm">Sáng tạo nội dung về ngành Ngôn ngữ Anh, thu hút hơn 1.000 lượt xem từ đề xuất của Google Discovery.</p>
+                    </div>
+                </div>
+
+                <!-- UPDATED: Major Project Section as a clickable card -->
+                <div class="md:col-span-2 project-card bg-gray-800 rounded-lg overflow-hidden transition duration-300"
+                     data-title="Hoạch Định Chiến Lược Content Tổng Thể"
+                     data-category="Chiến lược & SEO"
+                     data-images="https://placehold.co/1200x600/1f2937/f9fafb?text=Keyword+Research,https://placehold.co/1200x600/374151/f9fafb?text=Topic+Cluster,https://placehold.co/1200x600/4b5563/f9fafb?text=Content+Plan"
+                     data-links=""
+                     data-description="Thực hiện nghiên cứu và lập kế hoạch nội dung toàn diện cho các dự án SEO lớn. Quy trình bao gồm các bước chuyên sâu:
+• Nghiên cứu từ khóa (Keyword Research): Phân tích sâu về thị trường, đối thủ và ý định tìm kiếm của người dùng để xác định bộ từ khóa cốt lõi và từ khóa ngách tiềm năng.
+• Lập kế hoạch chủ đề (Topic Cluster): Xây dựng cấu trúc nội dung theo mô hình Topic Cluster, đảm bảo tính liên kết, chuyên sâu và bao phủ toàn bộ chủ đề.
+• Hoạch định bài viết (Content Plan): Lên kế hoạch chi tiết cho từng bài viết, từ tiêu đề, dàn ý, đến các yêu cầu về SEO on-page và media đi kèm.
+• Tối ưu và theo dõi: Liên tục theo dõi hiệu suất và tối ưu hóa nội dung để cải thiện thứ hạng và đạt được mục tiêu traffic.">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://placehold.co/1200x600/1f2937/f9fafb?text=Chiến+Lược+Content" alt="Dự án Hoạch định chiến lược" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-400">Chiến lược & SEO</p>
+                        <h3 class="text-xl font-bold text-white mt-1">Hoạch Định Chiến Lược Content Tổng Thể</h3>
+                        <p class="text-gray-300 mt-2 text-sm">Nghiên cứu và lập kế hoạch nội dung toàn diện cho các dự án SEO lớn, từ nghiên cứu từ khóa, xây dựng topic cluster, đến tối ưu và theo dõi hiệu suất.</p>
                     </div>
                 </div>
             </div>
@@ -326,16 +322,45 @@
         </div>
     </div>
     
-    <!-- Project Details Modal -->
+    <!-- Project Details Modal (Upgraded with Gallery and Links) -->
     <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
         <div id="modal-backdrop-project" class="fixed inset-0 bg-black/70 opacity-0"></div>
         <div class="modal-content bg-gray-800 rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative transform scale-95">
-            <img id="project-modal-image" src="" alt="Project Image" class="w-full h-64 object-cover rounded-t-lg">
+            
+            <!-- Gallery Container -->
+            <div class="relative">
+                <!-- Main Image -->
+                <img id="project-modal-image" src="" alt="Project Image" class="w-full h-64 md:h-96 object-cover rounded-t-lg">
+                
+                <!-- Navigation Buttons -->
+                <button id="prev-image-btn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition hidden">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <button id="next-image-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition hidden">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+            </div>
+
             <div class="p-6">
+                <!-- Thumbnails Container -->
+                <div id="project-modal-thumbnails" class="flex space-x-2 overflow-x-auto pb-2 mb-4">
+                    <!-- Thumbnails will be dynamically inserted here by JavaScript -->
+                </div>
+
+                <!-- Link for the current image -->
+                <a id="project-modal-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-block text-center w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mb-4 hidden">
+                    <span class="flex items-center justify-center">
+                        Xem Bài Viết Gốc
+                        <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                    </span>
+                </a>
+                
+                <!-- Project Details -->
                 <p id="project-modal-category" class="text-sm text-gray-400 mb-1"></p>
                 <h3 id="project-modal-title" class="text-2xl font-bold text-white mb-4"></h3>
-                <p id="project-modal-description" class="text-gray-300"></p>
+                <div id="project-modal-description" class="text-gray-300"></div>
             </div>
+            
             <button id="close-modal-btn-project" class="absolute top-4 right-4 text-gray-400 hover:text-white bg-black/20 rounded-full p-1">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
@@ -365,31 +390,108 @@
                     activateNavLink(entry.target.id);
                 }
             });
-        }, { rootMargin: '-30% 0px -70% 0px' }); // Activate when section is in the middle 40% of the viewport
+        }, { rootMargin: '-30% 0px -70% 0px' });
 
         sections.forEach(section => {
             observer.observe(section);
         });
 
 
-        // --- Project Modal Logic ---
+        // --- Project Modal Logic (Upgraded for Gallery with Links and Formatted Description) ---
         const projectCards = document.querySelectorAll('.project-card');
         const projectModal = document.getElementById('project-modal');
         const projectModalBackdrop = document.getElementById('modal-backdrop-project');
         const projectModalContent = projectModal.querySelector('.modal-content');
         const closeProjectModalBtn = document.getElementById('close-modal-btn-project');
-        
+
+        // Gallery elements
         const projectModalImage = document.getElementById('project-modal-image');
+        const thumbnailContainer = document.getElementById('project-modal-thumbnails');
+        const prevBtn = document.getElementById('prev-image-btn');
+        const nextBtn = document.getElementById('next-image-btn');
+        const projectModalLink = document.getElementById('project-modal-link'); 
+
+        // Details elements
         const projectModalCategory = document.getElementById('project-modal-category');
         const projectModalTitle = document.getElementById('project-modal-title');
         const projectModalDescription = document.getElementById('project-modal-description');
 
+        let currentProjectData = []; // Will store [{image, link}, {image, link}, ...]
+        let currentImageIndex = 0;
+
+        function updateGallery() {
+            const currentItem = currentProjectData[currentImageIndex];
+            if (!currentItem) return;
+
+            // Update main image
+            projectModalImage.src = currentItem.image;
+
+            // Update link and its visibility
+            if (currentItem.link) {
+                projectModalLink.href = currentItem.link;
+                projectModalLink.classList.remove('hidden');
+            } else {
+                projectModalLink.classList.add('hidden');
+            }
+
+            // Update active thumbnail
+            const thumbnails = thumbnailContainer.querySelectorAll('img');
+            thumbnails.forEach((thumb, index) => {
+                thumb.classList.toggle('thumbnail-active', index === currentImageIndex);
+            });
+
+            // Show/hide nav buttons only if there is more than one image
+            const showButtons = currentProjectData.length > 1;
+            prevBtn.classList.toggle('hidden', !showButtons);
+            nextBtn.classList.toggle('hidden', !showButtons);
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentProjectData.length;
+            updateGallery();
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + currentProjectData.length) % currentProjectData.length;
+            updateGallery();
+        }
+
+        prevBtn.addEventListener('click', showNextImage);
+        nextBtn.addEventListener('click', showPrevImage);
+
         function showProjectModal(data) {
-            projectModalImage.src = data.image;
+            // Populate text details
             projectModalCategory.textContent = data.category;
             projectModalTitle.textContent = data.title;
-            projectModalDescription.textContent = data.description;
+            // UPDATED: Use innerHTML to render line breaks for the description
+            projectModalDescription.innerHTML = data.description.replace(/\n/g, '<br>');
 
+
+            // Populate gallery data
+            currentProjectData = data.items;
+            currentImageIndex = 0;
+            thumbnailContainer.innerHTML = ''; // Clear old thumbnails
+
+            if (currentProjectData && currentProjectData.length > 0) {
+                // Create new thumbnails
+                currentProjectData.forEach((item, index) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = item.image;
+                    thumb.alt = `${data.title} thumbnail ${index + 1}`;
+                    thumb.className = "w-20 h-16 object-cover rounded-md cursor-pointer opacity-70 hover:opacity-100 transition";
+                    thumb.addEventListener('click', () => {
+                        currentImageIndex = index;
+                        updateGallery();
+                    });
+                    thumbnailContainer.appendChild(thumb);
+                });
+                updateGallery(); // Set initial image, link, and active thumb
+            }
+            
+            // Re-create icons since new elements were added to the DOM
+            lucide.createIcons();
+
+            // Show modal with animation
             projectModal.classList.remove('hidden');
             setTimeout(() => {
                 projectModalBackdrop.classList.remove('opacity-0');
@@ -402,15 +504,24 @@
             projectModalContent.classList.add('scale-95');
             setTimeout(() => {
                 projectModal.classList.add('hidden');
+                thumbnailContainer.innerHTML = ''; // Clear content on close
             }, 300);
         }
 
         projectCards.forEach(card => {
             card.addEventListener('click', () => {
+                const imagesData = card.dataset.images ? card.dataset.images.split(',').map(url => url.trim()) : [];
+                const linksData = card.dataset.links ? card.dataset.links.split(',').map(url => url.trim()) : [];
+
+                const items = imagesData.map((image, index) => ({
+                    image: image,
+                    link: linksData[index] || null // Pair image with link, or null if no link
+                }));
+
                 const data = {
                     title: card.dataset.title,
                     category: card.dataset.category,
-                    image: card.dataset.image,
+                    items: items, // Pass the array of objects
                     description: card.dataset.description,
                 };
                 showProjectModal(data);
@@ -456,7 +567,9 @@
         generateBtn.addEventListener('click', async () => {
             const topic = topicInput.value.trim();
             if (!topic) {
-                alert('Vui lòng nhập một chủ đề.');
+                aiModalTitle.textContent = 'Lỗi';
+                aiModalBody.textContent = 'Vui lòng nhập một chủ đề.';
+                showAiModal();
                 return;
             }
 
@@ -489,8 +602,19 @@
                     result.candidates[0].content.parts.length > 0) {
                     const text = result.candidates[0].content.parts[0].text;
                     
-                    aiModalTitle.textContent = `✨ Ý tưởng nội dung cho chủ đề: "${topic}"`;
-                    aiModalBody.innerHTML = text.replace(/\n/g, '<br>');
+                    let htmlContent = text
+                        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+                        .replace(/\*(.*)\*/gim, '<em>$1</em>')
+                        .replace(/^- (.*$)/gim, '<li class="ml-4">$1</li>')
+                        .replace(/^\* (.*$)/gim, '<li class="ml-4">$1</li>')
+                        .replace(/^\d+\. (.*$)/gim, '<li class="ml-4">$1</li>')
+                        .replace(/\n/g, '<br>');
+
+                    aiModalTitle.innerHTML = `✨ Ý tưởng nội dung cho chủ đề: "<strong>${topic}</strong>"`;
+                    aiModalBody.innerHTML = htmlContent;
                     showAiModal();
 
                 } else {
